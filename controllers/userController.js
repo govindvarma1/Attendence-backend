@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose"
 
-module.exports.Login = async (req, res, next) => {
+
+export const Login = async (req, res, next) => {
     try{
         res.send({msg: "on the login route"});
     } catch (ex) {
@@ -8,9 +9,9 @@ module.exports.Login = async (req, res, next) => {
     }
 }
 
-module.exports.Register = async (req, res, next) => {
+export const Register = async (req, res, next) => {
     try{
-        res.send({msg: "on the register route"});
+        const {username, password} = req.body;
     } catch (ex) {
         next(ex);
     }
