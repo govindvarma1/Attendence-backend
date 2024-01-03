@@ -3,6 +3,7 @@ import mongoose  from "mongoose"
 import cors  from "cors"
 import dotenv from "dotenv"
 import userRoutes from "./routes/userRoutes.js"
+import attendenceRoutes from "./routes/attendenceRoutes.js"
 dotenv.config();
 
 const app = express();
@@ -20,6 +21,7 @@ const DBConnect = async ()=> {
 DBConnect();
 
 app.use("/api/auth/", userRoutes);
+app.use("/api/attendence/", attendenceRoutes);
 
 app.get("/", (req,res, next) => {
     res.send({msg: "Your are on home page"});
